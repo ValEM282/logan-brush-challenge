@@ -80,12 +80,12 @@ const challenges = [
     title: "Never gonna give you up",
     artist: "Rick Astley",
     youtube: "https://youtu.be/DLzxrzFCyOs?si=Sexi5dh4BeC9I2L7",
-    tease: "Dernier challenge de la semaine. Don't give up ! 🏁🔥"
+    tease: "Dernier challenge de la semaine. Don't give up ! 🏁"
   }
 ];
 
-// Le matin va de 04:00 à 13:59.
-// Le soir va de 14:00 à 03:59.
+// Le matin va de 04:00:00 à 14:59:59.
+// Le soir va de 15:00:00 à 03:59:59.
 // Les jours sans challenge restent automatiquement en « RELÂCHE ».
 function currentPeriod(hour) {
   return (hour >= 4 && hour < 14) ? "matin" : "soir";
@@ -218,7 +218,7 @@ function render() {
   $("#offBox").classList.add("hidden");
   $("#challengeBox").classList.remove("hidden");
 
-  $("#challengeNumber").textContent = `🔥 Challenge #${c.id}`;
+  $("#challengeNumber").textContent = `Challenge #${c.id}`;
   $("#tease").textContent = c.tease;
   $("#songTitle").textContent = c.title;
   $("#songArtist").textContent = c.artist;
@@ -336,10 +336,10 @@ function showRecordedFile(file) {
 
   if (navigator.share) {
     $("#shareHint").textContent =
-      "Vas dans Whatsapp pour partager la vidéo.";
+      "Vas dans WhatsApp pour partager la vidéo";
   } else {
     $("#shareHint").textContent =
-      "Si le partage direct n'est pas disponible, enregistre la vidéo puis partage-la depuis la galerie.";
+      "Si le partage direct n'est pas disponible, enregistre la vidéo puis partage-la via la galerie";
   }
 }
 
@@ -436,7 +436,7 @@ async function shareVideo() {
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 
   alert(
-    "La vidéo a été enregistrée dans la galerie sur ton téléphone."
+    "La vidéo a été enregistrée dans la galerie sur ton téléphone"
   );
 }
 

@@ -78,10 +78,10 @@ const challenges = [
   },
   {
     id: 10, day: 5, period: "matin",
-    title: "Vollenbak",
-    artist: "Rekkt",
-    youtube: "https://youtu.be/xXT0UnNc4gI?si=QjIfNFdawxNKkHuo",
-    tease: "Dernier challenge de la semaine. Tu termines ça VOLLENBAK ! 🏁🔥"
+    title: "Never gonna give you up",
+    artist: "Rick Astley",
+    youtube: "https://youtu.be/DLzxrzFCyOs?si=Sexi5dh4BeC9I2L7",
+    tease: "Dernier challenge de la semaine. Don't give up ! 🏁🔥"
   }
 ];
 

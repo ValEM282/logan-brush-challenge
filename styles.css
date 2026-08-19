@@ -360,3 +360,8 @@ body{
 .rules > strong{
   color:#7dd3fc !important;
 }
+
+.song{
+  background:#223556;
+  border:1px solid rgba(125,211,252,.18);
+}

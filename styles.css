@@ -356,3 +356,7 @@ body{
 .tease{
   margin-top:0;
 }
+
+.rules > strong{
+  color:#7dd3fc !important;
+}

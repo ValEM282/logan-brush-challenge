@@ -58,6 +58,7 @@ h1{
   line-height:1;
   margin:.45rem 0 1rem;
   letter-spacing:-.04em;
+  text-align:center;
 }
 
 .slot{
@@ -266,4 +267,44 @@ code{
 @media (max-width:380px){
   .card{padding:19px}
   .camera-actions{grid-template-columns:1fr}
+}
+
+.rainbow-title{
+  text-align:center;
+}
+
+.rainbow-text{
+  background:linear-gradient(
+    90deg,
+    #ff0000,
+    #ff8c00,
+    #ffd700,
+    #32cd32,
+    #00bfff,
+    #6a5acd,
+    #ff1493,
+    #ff0000
+  );
+
+  background-size:400% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+
+  animation:rainbowMove 5s linear infinite;
+}
+
+.tooth{
+  color:white;
+  -webkit-text-fill-color:initial;
+}
+
+@keyframes rainbowMove{
+  0%{
+    background-position:0% 50%;
+  }
+
+  100%{
+    background-position:400% 50%;
+  }
 }

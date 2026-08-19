@@ -12,7 +12,6 @@
   <main class="app">
     <section class="card">
       <div class="eyebrow"></div>
-
       <h1 class="rainbow-title">
         <span class="rainbow-text">LOGAN'S</span><br>
         <span class="tooth">🦷</span>
@@ -22,7 +21,6 @@
       </h1>
 
       <div id="slotLabel" class="slot">Chargement…</div>
-
       <div class="rules">
         <strong>PENDANT 2 MINUTES</strong>
         <p>
@@ -33,31 +31,14 @@
       <section id="challengeBox" class="challenge hidden">
         <div class="challenge-number" id="challengeNumber"></div>
         <p class="tease" id="tease"></p>
-
         <div class="song">
           <div class="song-title" id="songTitle"></div>
           <div class="song-artist" id="songArtist"></div>
         </div>
 
-        <button id="youtubeBtn" class="btn primary" type="button">
-          ⏯️ Lance la chanson
+        <button id="spotifyBtn" class="btn primary" type="button">
+          ​⏯️​ Lance le morceau
         </button>
-
-        <div id="youtubePanel" class="youtube-panel hidden">
-          <div class="youtube-frame-wrap">
-            <iframe
-              id="youtubeFrame"
-              title="Chanson du challenge"
-              src=""
-              allow="autoplay; encrypted-media; picture-in-picture"
-              allowfullscreen
-              referrerpolicy="strict-origin-when-cross-origin">
-            </iframe>
-          </div>
-          <p class="hint youtube-hint">
-            Garde cette page ouverte pendant ton show. Si la lecture ne démarre pas, appuie sur ▶ dans la vidéo.
-          </p>
-        </div>
 
         <button id="cameraBtn" class="btn">🎦 Filme ton show !</button>
 
@@ -69,7 +50,6 @@
             <button id="startBtn" class="btn success">Démarrer</button>
             <button id="stopBtn" class="btn danger" disabled>Terminer</button>
           </div>
-
           <p class="hint">
             La vidéo reste sur ton téléphone tant que tu ne la partages pas.
           </p>
@@ -77,9 +57,9 @@
 
         <div id="fallbackPanel" class="fallback-panel hidden">
           <p class="hint">
-            Ton navigateur ne peut pas filmer directement ici. Utilise la caméra du téléphone :
+            Ton navigateur ne peut pas filmer directement ici. Utilise la caméra de ton téléphone :
           </p>
-          <label class="btn" for="fallbackVideo">🎥 Filmer avec mon téléphone</label>
+          <label class="btn" for="fallbackVideo">🎦 Filmer avec mon téléphone</label>
           <input id="fallbackVideo" class="file-input" type="file" accept="video/*" capture="user">
         </div>
 
@@ -114,7 +94,6 @@
       </details>
     </section>
   </main>
-
   <script src="app.js"></script>
 </body>
 </html>

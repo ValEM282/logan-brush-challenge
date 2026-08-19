@@ -365,3 +365,8 @@ body{
   background:#223556;
   border:1px solid rgba(125,211,252,.18);
 }
+
+.challenge-number{
+  font-size:1.05rem;
+  font-weight:900;
+}

@@ -232,8 +232,13 @@ function loadInlineYouTube(challenge) {
 function render() {
   const now = new Date();
 
-  $("#slotLabel").textContent =
-    `${days[now.getDay()]} • ${String(now.getHours()).padStart(2,"0")}:${String(now.getMinutes()).padStart(2,"0")}`;
+const dateText = now.toLocaleDateString("fr-BE", {
+  day: "2-digit",
+  month: "long"
+});
+
+$("#slotLabel").textContent =
+  `${days[now.getDay()]} ${dateText} • ${String(now.getHours()).padStart(2,"0")}:${String(now.getMinutes()).padStart(2,"0")}`;
 
   const c = getCurrentChallenge(now);
 

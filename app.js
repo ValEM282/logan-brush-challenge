@@ -4,7 +4,7 @@
 // =====================================================
 //
 // À PERSONNALISER :
-// title / artist / song link
+// title / artist / link youtube
 //
 // day : 0=dimanche, 1=lundi, ... 5=vendredi
 // period : "matin" ou "soir"
@@ -84,8 +84,8 @@ const challenges = [
   }
 ];
 
-// Le matin va de 04:00:00 à 14:59:59.
-// Le soir va de 15:00:00 à 03:59:59.
+// Le matin va de 04:00 à 13:59.
+// Le soir va de 14:00 à 03:59.
 // Les jours sans challenge restent automatiquement en « RELÂCHE ».
 function currentPeriod(hour) {
   return (hour >= 4 && hour < 14) ? "matin" : "soir";
@@ -190,6 +190,41 @@ function formatMoment(date, period) {
   return `${days[date.getDay()]} ${period}`;
 }
 
+
+function getYouTubeId(url) {
+  try {
+    const u = new URL(url);
+
+    if (u.hostname.includes("youtu.be")) {
+      return u.pathname.replace("/", "").split("/")[0];
+    }
+
+    if (u.hostname.includes("youtube.com")) {
+      if (u.pathname.startsWith("/shorts/")) return u.pathname.split("/")[2];
+      if (u.pathname.startsWith("/embed/")) return u.pathname.split("/")[2];
+      return u.searchParams.get("v");
+    }
+  } catch (error) {
+    console.error("Lien YouTube invalide :", url, error);
+  }
+
+  return "";
+}
+
+function loadInlineYouTube(challenge) {
+  const videoId = getYouTubeId(challenge.youtube);
+  if (!videoId) return;
+
+  const panel = $("#youtubePanel");
+  const frame = $("#youtubeFrame");
+
+  panel.classList.remove("hidden");
+
+  frame.src =
+    `https://www.youtube.com/embed/${videoId}` +
+    `?autoplay=1&playsinline=1&rel=0&modestbranding=1`;
+}
+
 // -----------------------------------------------------
 // AFFICHAGE
 // -----------------------------------------------------
@@ -201,6 +236,14 @@ function render() {
     `${days[now.getDay()]} • ${String(now.getHours()).padStart(2,"0")}:${String(now.getMinutes()).padStart(2,"0")}`;
 
   const c = getCurrentChallenge(now);
+
+  const ytFrame = $("#youtubeFrame");
+  const ytPanel = $("#youtubePanel");
+  if (ytFrame && ytPanel && ytFrame.dataset.challengeId !== String(c?.id || "")) {
+    ytFrame.src = "";
+    ytFrame.dataset.challengeId = String(c?.id || "");
+    ytPanel.classList.add("hidden");
+  }
 
   if (!c) {
     $("#challengeBox").classList.add("hidden");
@@ -222,7 +265,7 @@ function render() {
   $("#tease").textContent = c.tease;
   $("#songTitle").textContent = c.title;
   $("#songArtist").textContent = c.artist;
-  $("#youtubeBtn").href = c.youtube;
+  
 
   updateProgress();
 
@@ -414,7 +457,7 @@ async function shareVideo() {
     try {
       await navigator.share({
         title: "Logan Brush Challenge",
-        text: "Mon Brush Challenge est validé 😎🦷😎",
+        text: "Mon Brush Challenge est validé 😎🦷🔥",
         files: [recordedFile]
       });
       return;
@@ -436,13 +479,19 @@ async function shareVideo() {
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 
   alert(
-    "La vidéo a été enregistrée dans la galerie sur ton téléphone"
+    "La vidéo a été enregistrée sur le téléphone. Tu peux maintenant la partager depuis la galerie ou les téléchargements."
   );
 }
 
 // -----------------------------------------------------
 // ÉVÉNEMENTS
 // -----------------------------------------------------
+
+
+$("#youtubeBtn").addEventListener("click", () => {
+  const challenge = getCurrentChallenge();
+  if (challenge) loadInlineYouTube(challenge);
+});
 
 $("#cameraBtn").addEventListener("click", openCamera);
 $("#startBtn").addEventListener("click", startRecording);

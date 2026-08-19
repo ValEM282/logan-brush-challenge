@@ -58,7 +58,8 @@ const challenges = [
     id: 7, day: 3, period: "soir",
     title: "Marly-Gomont",
     artist: "Kamini",
-    youtube: "https://youtu.be/GGPXjiwlWZc?si=2o8PtkIi9yEMQB-Q",
+    youtube: "",
+    spotify: "https://open.spotify.com/track/42SUjSOr2tsUmOIlYBX04Z?si=RxC_dpH4SdS4tyilwszo9g",
     tease: "Chante, danse, mime… ou invente-nous quelque chose. À toi de jouer ! 😁"
   },
   {
@@ -270,6 +271,12 @@ $("#slotLabel").textContent =
   $("#tease").textContent = c.tease;
   $("#songTitle").textContent = c.title;
   $("#songArtist").textContent = c.artist;
+
+  if (c.spotify) {
+    $("#youtubeBtn").textContent = "⏯️ Lance la chanson S";
+  } else {
+    $("#youtubeBtn").textContent = "⏯️ Lance la chanson";
+  }
   
 
   updateProgress();
@@ -495,7 +502,17 @@ async function shareVideo() {
 
 $("#youtubeBtn").addEventListener("click", () => {
   const challenge = getCurrentChallenge();
-  if (challenge) loadInlineYouTube(challenge);
+
+  if (!challenge) return;
+
+  // Pour Marly-Gomont : ouverture dans Spotify
+  if (challenge.spotify) {
+    window.location.href = challenge.spotify;
+    return;
+  }
+
+  // Pour les autres challenges : YouTube intégré
+  loadInlineYouTube(challenge);
 });
 
 $("#cameraBtn").addEventListener("click", openCamera);

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="Le Brush Challenge de Logan : 10 défis brossage entre le dimanche soir et le vendredi matin.">
+  <title>Logan Brush Challenge by ValEM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <div class="eyebrow">LOGAN</div>
+      <h1>---- LOGAN ----<br>🦷 BRUSH 🦷<br>CHALLENGE</h1>
+      <div id="slotLabel" class="slot">Chargement…</div>
+
+      <section id="challengeBox" class="challenge hidden">
+        <div class="challenge-number" id="challengeNumber"></div>
+        <p class="tease" id="tease"></p>
+
+        <div class="rules">
+          <strong>🎭 TON CHALLENGE</strong>
+          <p>
+            Pendant les 2 minutes de ton brossage, fais le show ! 😎<br>
+            Tu peux chanter, danser, faire du playback, mimer, improviser…
+            ou nous sortir une prestation complètement improbable.<br>
+            <strong>Tu fais ce que tu veux. Une seule règle : tu tiens pendant tout le brossage ! 🪥🔥</strong>
+          </p>
+        </div>
+
+        <div class="song">
+          <div class="song-title" id="songTitle"></div>
+          <div class="song-artist" id="songArtist"></div>
+        </div>
+
+        <a id="youtubeBtn" class="btn primary" href="#" target="_blank" rel="noopener">
+          ⏯️ Lance la chanson
+        </a>
+
+        <button id="cameraBtn" class="btn">🎦 Logan, fais ton show !</button>
+
+        <div id="cameraPanel" class="camera-panel hidden">
+          <video id="preview" autoplay muted playsinline></video>
+          <div class="timer" id="timer">02:00</div>
+
+          <div class="camera-actions">
+            <button id="startBtn" class="btn success">Démarrer</button>
+            <button id="stopBtn" class="btn danger" disabled>Terminer</button>
+          </div>
+
+          <p class="hint">
+            La vidéo reste sur ton téléphone tant que tu ne la partages pas.
+          </p>
+        </div>
+
+        <div id="fallbackPanel" class="fallback-panel hidden">
+          <p class="hint">
+            Ton navigateur ne peut pas filmer directement ici. Utilise la caméra du téléphone :
+          </p>
+          <label class="btn" for="fallbackVideo">🎥 Filmer avec mon téléphone</label>
+          <input id="fallbackVideo" class="file-input" type="file" accept="video/*" capture="user">
+        </div>
+
+        <div id="resultPanel" class="result hidden">
+          <video id="resultVideo" controls playsinline></video>
+          <button id="shareBtn" class="btn primary">➡️ Envoyer la vidéo</button>
+          <button id="redoBtn" class="btn subtle">🔄 Refaire la vidéo</button>
+          <p id="shareHint" class="hint"></p>
+        </div>
+
+        <div class="progress-wrap">
+          <div class="progress-label">
+            <span>Progression de la semaine</span>
+            <strong id="progressText">0/10</strong>
+          </div>
+          <div class="progress"><div id="progressBar"></div></div>
+          <button id="validateBtn" class="btn subtle">🔥 Challenge du jour fait 🔥</button>
+        </div>
+      </section>
+
+      <section id="offBox" class="off hidden">
+        <div class="big">😎 RELÂCHE 😎</div>
+        <p id="nextChallenge"></p>
+      </section>
+
+      <details class="settings">
+        <summary>⚙️ Réglages</summary>
+        <p>
+          Les chansons peuvent être changées dans <code>app.js</code>
+          sans modifier le NFC.
+        </p>
+        <button id="resetBtn" class="btn subtle">Réinitialiser la progression</button>
+      </details>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,5 +1,4 @@
-
-:root{
+​:root{
   --bg:#0b1020;
   --card:#121a2c;
   --card2:#18233a;
@@ -14,7 +13,6 @@
 *{box-sizing:border-box}
 
 html{-webkit-text-size-adjust:100%}
-
 body{
   margin:0;
   min-height:100vh;
@@ -27,7 +25,6 @@ body{
 }
 
 button,a,label{-webkit-tap-highlight-color:transparent}
-
 .app{
   min-height:100vh;
   display:grid;
@@ -52,7 +49,6 @@ button,a,label{-webkit-tap-highlight-color:transparent}
   color:var(--accent);
   font-weight:800;
 }
-
 h1{
   font-size:clamp(2rem,10vw,2.55rem);
   line-height:1;
@@ -85,7 +81,6 @@ h1{
   line-height:1.45;
 }
 
-
 .rules{
   padding:16px;
   border-radius:18px;
@@ -115,7 +110,6 @@ h1{
   background:var(--card2);
   border:1px solid rgba(255,255,255,.04);
 }
-
 .song-title{
   font-size:1.25rem;
   font-weight:900;
@@ -145,7 +139,6 @@ h1{
 }
 
 .btn:active{transform:translateY(1px)}
-
 .btn.primary{
   background:linear-gradient(135deg,#0284c7,#7c3aed);
 }
@@ -172,7 +165,6 @@ video{
   background:#020617;
   object-fit:cover;
 }
-
 .timer{
   text-align:center;
   font-size:2.4rem;
@@ -202,7 +194,6 @@ video{
   display:grid;
   gap:12px;
 }
-
 .progress-label{
   display:flex;
   justify-content:space-between;
@@ -235,7 +226,6 @@ video{
   margin:0;
   line-height:1.5;
 }
-
 .settings{
   margin-top:20px;
   padding-top:4px;
@@ -267,7 +257,6 @@ code{
   .card{padding:19px}
   .camera-actions{grid-template-columns:1fr}
 }
-
 .rainbow-title{text-align:center}
 .rainbow-text{
   background:linear-gradient(90deg,#ff0000,#ff8c00,#ffd700,#32cd32,#00bfff,#6a5acd,#ff1493,#ff0000);
@@ -283,42 +272,12 @@ code{
   100%{background-position:400% 50%}
 }
 
-
-/* YouTube intégré au challenge */
-.youtube-panel{
-  display:grid;
-  gap:10px;
-}
-
-.youtube-frame-wrap{
-  position:relative;
-  width:100%;
-  aspect-ratio:16 / 9;
-  overflow:hidden;
-  border-radius:18px;
-  background:#020617;
-  border:1px solid rgba(255,255,255,.08);
-}
-
-.youtube-frame-wrap iframe{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  border:0;
-}
-
-.youtube-hint{
-  text-align:center;
-}
-
 .rules,
 .rules>strong,
 .rules p,
 .rules p strong{
   text-align:center;
 }
-
 /* ===== LAST FUCKING UPDATE ValEM ===== */
 
 /* Encadré des règles plus compact */

@@ -1,10 +1,10 @@
 
 // =====================================================
-// LOGAN BRUSH CHALLENGE by ValEM
+// BRUSH CHALLENGE by ValEM
 // =====================================================
 //
-// À PERSONNALISER :
-// title / artist / link youtube
+// A PERSONNALISER :
+// title / artist / link Spotify
 //
 // day : 0=dimanche, 1=lundi, ... 5=vendredi
 // period : "matin" ou "soir"
@@ -14,74 +14,73 @@
 const challenges = [
   {
     id: 1, day: 0, period: "soir",
-    title: "Sexy and I Know It",
-    artist: "LMFAO",
-    youtube: "https://youtu.be/wyx6JDQCslE?si=PK6YghhpouN5hfrm",
-    tease: "Premier challenge, Logan. Montre-nous directement de quoi tu es capable. 😈"
+    title: 'Sexy and I Know It',
+    artist: 'LMFAO',
+    spotify: 'https://open.spotify.com/intl-fr/track/70Vdd1gx5tn84jkAU31ASv?si=f84674583518428b',
+    tease: 'Premier challenge : fais deviner le morceau grâce à ton show ! 😈'
   },
   {
     id: 2, day: 1, period: "matin",
-    title: "Gangnam Style",
-    artist: "PSY",
-    youtube: "https://youtu.be/9bZkp7q19f0?si=TJhnEBu45AwGNX4k",
-    tease: "T'es réveillé ? Parfait. Maintenant, fais le show ! 🕺"
+    title: 'Gangnam Style',
+    artist: 'PSY',
+    spotify: 'https://open.spotify.com/intl-fr/track/7LHjM2QyZsloOfRmxKnQ39?si=4a7ca6feda6d40e8',
+    tease: "À toi de mettre la puce à l'oreille… Sans donner la réponse trop facilement ! 😎"
   },
   {
     id: 3, day: 1, period: "soir",
-    title: "Logobitombo",
-    artist: "Moussier Tombola",
-    youtube: "https://youtu.be/9NmGDZMy3G0?si=LGVIi03fuYQEQ5sh",
-    tease: "Tu as 2 minutes. Fais-en quelque chose de mémorable. 😎"
+    title: 'Logobitombo',
+    artist: 'Moussier Tombola',
+    spotify: 'https://open.spotify.com/intl-fr/track/5L3i9murWmBM62XVDV9JDk?si=db50252d5621497c',
+    tease: 'Mime, danse, fais du playback muet ou improvise ! 🎭'
   },
   {
     id: 4, day: 2, period: "matin",
-    title: "Libérée, Délivrée",
-    artist: "Anaïs Delva",
-    youtube: "https://youtu.be/vzgInDxzyGU?si=qj2EoRHj2YDCHxq0",
-    tease: "Celle-là, tu vas devoir l'assumer jusqu'au bout. ❄️😂"
+    title: 'Libérée, Délivrée',
+    artist: 'Anaïs Delva',
+    spotify: 'https://open.spotify.com/intl-fr/track/5pqhqSdrxLXDZY9eeCAtSJ?si=86ad5945e8c7400d',
+    tease: 'Fais deviner ça sans prononcer le titre, hé ! ❄️😂'
   },
   {
     id: 5, day: 2, period: "soir",
-    title: "Ce matin va être une pure soirée",
-    artist: "Fatal Bazooka feat. Big Ali, PZK & Dogg Soso",
-    youtube: "https://youtu.be/AS4GlgkW5Fc?si=38QeEeMZ-cr-j--Z",
-    tease: "Prestation totalement libre. Surprends-nous ! 🤨"
+    title: 'Ce matin va être une pure soirée',
+    artist: 'Fatal Bazooka feat. Big Ali, PZK & Dogg Soso',
+    spotify: "https://open.spotify.com/intl-fr/track/5XENYfZngvQn29g1ZAjeNE?si=3bd1307e73ee4805",
+    tease: 'Transforme ton brossage impec en indices de star ! 🤨'
   },
   {
     id: 6, day: 3, period: "matin",
     title: "Ça m'énerve",
-    artist: "Helmut Fritz",
-    youtube: "https://youtu.be/4mNDYWhRSaw?si=2SXFv9qWJYumPfKd",
-    tease: "Tu es à mi-parcours. Pas question de baisser le niveau maintenant. 🔥"
+    artist: 'Helmut Fritz',
+    spotify: 'https://open.spotify.com/intl-fr/track/1P37gwlsx2ghfr8tGzJsRE?si=e566eedf289f4b3a',
+    tease: 'Tu es à mi-parcours. Fais le show et sème de bons indices ! 🔥'
   },
   {
     id: 7, day: 3, period: "soir",
-    title: "Marly-Gomont",
-    artist: "Kamini",
-    youtube: "",
-    spotify: "https://open.spotify.com/track/42SUjSOr2tsUmOIlYBX04Z?si=RxC_dpH4SdS4tyilwszo9g",
-    tease: "Chante, danse, mime… ou invente-nous quelque chose. À toi de jouer ! 😁"
+    title: 'Marly-Gomont',
+    artist: 'Kamini',
+    spotify: 'https://open.spotify.com/intl-fr/track/42SUjSOr2tsUmOIlYBX04Z?si=c6cad8f51f2c4dae',
+    tease: 'Chante, danse, playback… tout est permis pour leur faire deviner ! 😁'
   },
   {
     id: 8, day: 4, period: "matin",
     title: "Chef, un p'tit verre on a soif",
-    artist: "Le Grand Jojo",
-    youtube: "https://youtu.be/Dv-vqcR4GY4?si=sKjsv6l82KDv_HQ7",
-    tease: "Un grand classique belge. Tu en fais ce que tu veux… mais fais-le bien. 🇧🇪😂"
+    artist: 'Le Grand Jojo',
+    spotify: 'https://open.spotify.com/intl-fr/track/40adj1F9P9opErWBkLauPJ?si=51d0b98fd289457f',
+    tease: 'Deux minutes, une brosse à dents, un gobelet et ton imagination ! 🇧🇪😂'
   },
   {
     id: 9, day: 4, period: "soir",
-    title: "Cotton Eye Joe",
-    artist: "Rednex",
-    youtube: "https://youtu.be/mOYZaiDZ7BM?si=RK51DB6SAbqbDuhz",
-    tease: "Dernier soir à l'internat : tu nous dois une prestation digne de ce nom. 🤠"
+    title: 'Cotton Eye Joe',
+    artist: 'Rednex',
+    spotify: 'https://open.spotify.com/intl-fr/track/06hsdMbBxWGqBO0TV0Zrkf?si=0758ea54904443eb',
+    tease: "Dernier soir à l'internat : fais un show digne de ce nom. 🤠"
   },
   {
     id: 10, day: 5, period: "matin",
-    title: "Never gonna give you up",
-    artist: "Rick Astley",
-    youtube: "https://youtu.be/DLzxrzFCyOs?si=Sexi5dh4BeC9I2L7",
-    tease: "Dernier challenge de la semaine. Don't give up ! 🏁"
+    title: 'Never Gonna Give You Up',
+    artist: 'Rick Astley',
+    spotify: 'https://open.spotify.com/intl-fr/track/4PTG3Z6ehGkBFwjybzWkR8?si=13c31fd0438f447c',
+    tease: 'Dernier challenge de la semaine : Do not give up ! 🏁'
   }
 ];
 
@@ -192,39 +191,6 @@ function formatMoment(date, period) {
 }
 
 
-function getYouTubeId(url) {
-  try {
-    const u = new URL(url);
-
-    if (u.hostname.includes("youtu.be")) {
-      return u.pathname.replace("/", "").split("/")[0];
-    }
-
-    if (u.hostname.includes("youtube.com")) {
-      if (u.pathname.startsWith("/shorts/")) return u.pathname.split("/")[2];
-      if (u.pathname.startsWith("/embed/")) return u.pathname.split("/")[2];
-      return u.searchParams.get("v");
-    }
-  } catch (error) {
-    console.error("Lien YouTube invalide :", url, error);
-  }
-
-  return "";
-}
-
-function loadInlineYouTube(challenge) {
-  const videoId = getYouTubeId(challenge.youtube);
-  if (!videoId) return;
-
-  const panel = $("#youtubePanel");
-  const frame = $("#youtubeFrame");
-
-  panel.classList.remove("hidden");
-
-  frame.src =
-    `https://www.youtube.com/embed/${videoId}` +
-    `?autoplay=1&playsinline=1&rel=0&modestbranding=1`;
-}
 
 // -----------------------------------------------------
 // AFFICHAGE
@@ -242,14 +208,6 @@ $("#slotLabel").textContent =
   `${days[now.getDay()]} ${dateText} • ${String(now.getHours()).padStart(2,"0")}:${String(now.getMinutes()).padStart(2,"0")}`;
 
   const c = getCurrentChallenge(now);
-
-  const ytFrame = $("#youtubeFrame");
-  const ytPanel = $("#youtubePanel");
-  if (ytFrame && ytPanel && ytFrame.dataset.challengeId !== String(c?.id || "")) {
-    ytFrame.src = "";
-    ytFrame.dataset.challengeId = String(c?.id || "");
-    ytPanel.classList.add("hidden");
-  }
 
   if (!c) {
     $("#challengeBox").classList.add("hidden");
@@ -271,15 +229,9 @@ $("#slotLabel").textContent =
   $("#tease").textContent = c.tease;
   $("#songTitle").textContent = c.title;
   $("#songArtist").textContent = c.artist;
+  $("#spotifyBtn").textContent = "🎵 Écoute le morceau sur Spotify";
 
-  if (c.spotify) {
-    $("#youtubeBtn").textContent = "⏯️ Lance la chanson S";
-  } else {
-    $("#youtubeBtn").textContent = "⏯️ Lance la chanson";
-  }
-  
-
-  updateProgress();
+updateProgress();
 
   $("#validateBtn").onclick = () => {
     const done = getDone();
@@ -391,7 +343,7 @@ function showRecordedFile(file) {
 
   if (navigator.share) {
     $("#shareHint").textContent =
-      "Vas dans WhatsApp pour partager la vidéo";
+      "Envoie la vidéo pour faire deviner le morceau !";
   } else {
     $("#shareHint").textContent =
       "Si le partage direct n'est pas disponible, enregistre la vidéo puis partage-la via la galerie";
@@ -469,7 +421,7 @@ async function shareVideo() {
     try {
       await navigator.share({
         title: "Logan Brush Challenge",
-        text: "Mon Brush Challenge est validé 😎🦷🔥",
+        text: "À toi de deviner le morceau 😎🦷🎵",
         files: [recordedFile]
       });
       return;
@@ -491,7 +443,7 @@ async function shareVideo() {
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 
   alert(
-    "La vidéo a été enregistrée sur le téléphone. Tu peux maintenant la partager depuis la galerie ou les téléchargements."
+    "La vidéo a été enregistrée sur ton téléphone. Tu peux maintenant la partager depuis la galerie ou les téléchargements."
   );
 }
 
@@ -500,19 +452,14 @@ async function shareVideo() {
 // -----------------------------------------------------
 
 
-$("#youtubeBtn").addEventListener("click", () => {
+$("#spotifyBtn").addEventListener("click", () => {
   const challenge = getCurrentChallenge();
+  if (!challenge || !challenge.spotify) return;
 
-  if (!challenge) return;
-
-  // Pour Marly-Gomont : ouverture dans Spotify
-  if (challenge.spotify) {
-    window.location.href = challenge.spotify;
-    return;
-  }
-
-  // Pour les autres challenges : YouTube intégré
-  loadInlineYouTube(challenge);
+  // Spotify s'ouvre sur le morceau du challenge.
+  // Logan lance le morceau puis revient sur le Brush Challenge
+  // pour filmer son show pendant que Spotify continue en arrière-plan.
+  window.location.href = challenge.spotify;
 });
 
 $("#cameraBtn").addEventListener("click", openCamera);

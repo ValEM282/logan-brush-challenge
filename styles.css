@@ -93,6 +93,7 @@ h1{
   background:rgba(125,211,252,.08);
   border:1px solid rgba(125,211,252,.18);
   line-height:1.5;
+  text-align:center;
 }
 .rules>strong{
   display:block;
@@ -100,14 +101,17 @@ h1{
   letter-spacing:.08em;
   font-size:.85rem;
   margin-bottom:7px;
+  text-align:center;
 }
 .rules p{
   margin:0;
   color:var(--muted);
   font-size:.92rem;
+  text-align:center;
 }
 .rules p strong{
   color:var(--text);
+  text-align:center;
 }
 
 .song{

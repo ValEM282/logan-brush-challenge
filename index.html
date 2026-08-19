@@ -11,36 +11,53 @@
 <body>
   <main class="app">
     <section class="card">
-    <div class="eyebrow"></div>
-    <h1 class="rainbow-title">
-      <span class="rainbow-text">LOGAN'S</span><br>
-      <span class="tooth">🦷</span>
-      <span class="rainbow-text">BRUSH</span>
-      <span class="tooth">🦷</span><br>
-      <span class="rainbow-text">CHALLENGE</span>
-    </h1>
+      <div class="eyebrow"></div>
+
+      <h1 class="rainbow-title">
+        <span class="rainbow-text">LOGAN'S</span><br>
+        <span class="tooth">🦷</span>
+        <span class="rainbow-text">BRUSH</span>
+        <span class="tooth">🦷</span><br>
+        <span class="rainbow-text">CHALLENGE</span>
+      </h1>
+
       <div id="slotLabel" class="slot">Chargement…</div>
 
-    <div class="rules">
-      <strong>PENDANT 2 MINUTES</strong>
-      <p> 
-      <strong>Une seule règle !<br>Faire le show et te brosser les dents en même temps !</strong>
-      </p>
-    </div>
+      <div class="rules">
+        <strong>PENDANT 2 MINUTES</strong>
+        <p>
+          <strong>Une seule règle !<br>Faire le show et te brosser les dents en même temps !</strong>
+        </p>
+      </div>
 
       <section id="challengeBox" class="challenge hidden">
         <div class="challenge-number" id="challengeNumber"></div>
         <p class="tease" id="tease"></p>
-
 
         <div class="song">
           <div class="song-title" id="songTitle"></div>
           <div class="song-artist" id="songArtist"></div>
         </div>
 
-        <a id="youtubeBtn" class="btn primary" href="#" target="_blank" rel="noopener">
+        <button id="youtubeBtn" class="btn primary" type="button">
           ⏯️ Lance la chanson
-        </a>
+        </button>
+
+        <div id="youtubePanel" class="youtube-panel hidden">
+          <div class="youtube-frame-wrap">
+            <iframe
+              id="youtubeFrame"
+              title="Chanson du challenge"
+              src=""
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowfullscreen
+              referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
+          </div>
+          <p class="hint youtube-hint">
+            Garde cette page ouverte pendant ton show. Si la lecture ne démarre pas toute seule, appuie sur ▶ dans la vidéo.
+          </p>
+        </div>
 
         <button id="cameraBtn" class="btn">🎦 Filme ton show !</button>
 
@@ -91,7 +108,7 @@
       <details class="settings">
         <summary>⚙️ Réglages</summary>
         <p>
-         Pour changer de playlist, il faut le demander gentiment à Val (ou Pierrick s'il a appris comment on fait entre-temps).
+          Pour changer de playlist, il faut le demander gentiment à Val (ou Pierrick s'il a appris comment on fait entre-temps).
         </p>
         <button id="resetBtn" class="btn subtle">Réinitialiser la progression</button>
       </details>

@@ -58,7 +58,6 @@ h1{
   line-height:1;
   margin:.45rem 0 1rem;
   letter-spacing:-.04em;
-  text-align:center;
 }
 
 .slot{
@@ -93,7 +92,6 @@ h1{
   background:rgba(125,211,252,.08);
   border:1px solid rgba(125,211,252,.18);
   line-height:1.5;
-  text-align:center;
 }
 .rules>strong{
   display:block;
@@ -101,17 +99,14 @@ h1{
   letter-spacing:.08em;
   font-size:.85rem;
   margin-bottom:7px;
-  text-align:center;
 }
 .rules p{
   margin:0;
   color:var(--muted);
   font-size:.92rem;
-  text-align:center;
 }
 .rules p strong{
   color:var(--text);
-  text-align:center;
 }
 
 .song{
@@ -273,42 +268,53 @@ code{
   .camera-actions{grid-template-columns:1fr}
 }
 
-.rainbow-title{
-  text-align:center;
-}
-
+.rainbow-title{text-align:center}
 .rainbow-text{
-  background:linear-gradient(
-    90deg,
-    #ff0000,
-    #ff8c00,
-    #ffd700,
-    #32cd32,
-    #00bfff,
-    #6a5acd,
-    #ff1493,
-    #ff0000
-  );
-
+  background:linear-gradient(90deg,#ff0000,#ff8c00,#ffd700,#32cd32,#00bfff,#6a5acd,#ff1493,#ff0000);
   background-size:400% 100%;
   -webkit-background-clip:text;
   background-clip:text;
   color:transparent;
-
   animation:rainbowMove 5s linear infinite;
 }
-
-.tooth{
-  color:white;
-  -webkit-text-fill-color:initial;
+.tooth{color:white;-webkit-text-fill-color:initial}
+@keyframes rainbowMove{
+  0%{background-position:0% 50%}
+  100%{background-position:400% 50%}
 }
 
-@keyframes rainbowMove{
-  0%{
-    background-position:0% 50%;
-  }
 
-  100%{
-    background-position:400% 50%;
-  }
+/* YouTube intégré au challenge */
+.youtube-panel{
+  display:grid;
+  gap:10px;
+}
+
+.youtube-frame-wrap{
+  position:relative;
+  width:100%;
+  aspect-ratio:16 / 9;
+  overflow:hidden;
+  border-radius:18px;
+  background:#020617;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.youtube-frame-wrap iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.youtube-hint{
+  text-align:center;
+}
+
+.rules,
+.rules>strong,
+.rules p,
+.rules p strong{
+  text-align:center;
 }

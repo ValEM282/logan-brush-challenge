@@ -307,6 +307,51 @@ code{
   margin-bottom:-5px;
 }
 
+/* ===== CORRECTION COULEURS TEXTE ===== */
+
+body,
+.card{
+  color:#f8fafc;
+}
+
+.slot,
+.tease,
+.song-artist,
+.progress-label,
+.hint,
+.settings{
+  color:#a7b0c0;
+}
+
+.rules p{
+  color:#a7b0c0;
+}
+
+.rules p strong{
+  color:#f8fafc;
+}
+
+.song-title,
+.challenge-number{
+  color:#f8fafc;
+}
+
+.challenge-number{
+  color:#a78bfa;
+}
+
+.btn{
+  color:#f8fafc;
+}
+
+html,
+body{
+  background:
+    radial-gradient(circle at top left,#172554 0,transparent 38%),
+    radial-gradient(circle at bottom right,#3b0764 0,transparent 35%),
+    #0b1020;
+}
+
 /* Rapprocher le texte en dessous de CHALLENGE # */
 .tease{
   margin-top:0;

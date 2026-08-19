@@ -318,3 +318,25 @@ code{
 .rules p strong{
   text-align:center;
 }
+
+/* ===== LAST FUCKING UPDATE ValEM ===== */
+
+/* Encadré des règles plus compact */
+.rules{
+  padding:12px 16px;
+  gap:3px;
+}
+
+.rules>strong{
+  margin-bottom:2px;
+}
+
+.rules p{
+  margin:0;
+  line-height:1.25;
+}
+
+/* Plus d'espace avant le numéro du challenge */
+.challenge-number{
+  margin-top:14px;
+}

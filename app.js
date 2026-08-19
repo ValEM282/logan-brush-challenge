@@ -4,12 +4,11 @@
 // =====================================================
 //
 // À PERSONNALISER :
-// remplace title / artist / youtube pour les 10 challenges.
+// title / artist / song link
 //
 // day : 0=dimanche, 1=lundi, ... 5=vendredi
 // period : "matin" ou "soir"
 //
-// Conseil : choisis de préférence des vidéos YouTube avec paroles.
 // =====================================================
 
 const challenges = [
@@ -150,7 +149,7 @@ function updateProgress() {
 
   const c = getCurrentChallenge();
   if (c && done[c.id]) {
-    $("#validateBtn").textContent = "✅ Challenge du jour validé";
+    $("#validateBtn").textContent = "✅ Challenge du jour validé ✅";
     $("#validateBtn").disabled = true;
   } else {
     $("#validateBtn").textContent = "🔥 Challenge du jour fait 🔥";
@@ -337,7 +336,7 @@ function showRecordedFile(file) {
 
   if (navigator.share) {
     $("#shareHint").textContent =
-      "Choisis ensuite WhatsApp puis le contact de sa maman.";
+      "Vas dans Whatsapp pour partager la vidéo.";
   } else {
     $("#shareHint").textContent =
       "Si le partage direct n'est pas disponible, enregistre la vidéo puis partage-la depuis la galerie.";
@@ -415,7 +414,7 @@ async function shareVideo() {
     try {
       await navigator.share({
         title: "Logan Brush Challenge",
-        text: "Mon Brush Challenge est validé 😎🦷🔥",
+        text: "Mon Brush Challenge est validé 😎🦷😎",
         files: [recordedFile]
       });
       return;
@@ -437,7 +436,7 @@ async function shareVideo() {
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 
   alert(
-    "La vidéo a été enregistrée sur le téléphone. Tu peux maintenant la partager depuis la galerie ou les téléchargements."
+    "La vidéo a été enregistrée dans la galerie sur ton téléphone."
   );
 }
 

@@ -336,7 +336,19 @@ code{
   line-height:1.25;
 }
 
-/* Plus d'espace avant le numéro du challenge */
+/* Plus d'espace avant CHALLENGE # */
 .challenge-number{
   margin-top:14px;
+}
+
+/* Centrer CHALLENGE # */
+.challenge-number{
+  text-align:center;
+  margin-top:14px;
+  margin-bottom:-5px;
+}
+
+/* Rapprocher le texte en dessous de CHALLENGE # */
+.tease{
+  margin-top:0;
 }

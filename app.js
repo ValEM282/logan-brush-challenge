@@ -1,4 +1,3 @@
-
 // =====================================================
 // BRUSH CHALLENGE by ValEM
 // =====================================================
@@ -14,85 +13,82 @@
 const challenges = [
   {
     id: 1, day: 0, period: "soir",
-    title: 'Sexy and I Know It',
-    artist: 'LMFAO',
-    spotify: 'https://open.spotify.com/intl-fr/track/70Vdd1gx5tn84jkAU31ASv?si=f84674583518428b',
-    tease: 'Premier challenge : fais deviner le morceau grâce à ton show ! 😈'
+    title: "Sexy and I Know It",
+    artist: "LMFAO",
+    spotify: "https://open.spotify.com/intl-fr/track/70Vdd1gx5tn84jkAU31ASv?si=f84674583518428b",
+    tease: "Premier challenge : fais deviner le morceau grâce à ton show ! 😈"
   },
   {
     id: 2, day: 1, period: "matin",
-    title: 'Gangnam Style',
-    artist: 'PSY',
-    spotify: 'https://open.spotify.com/intl-fr/track/7LHjM2QyZsloOfRmxKnQ39?si=4a7ca6feda6d40e8',
+    title: "Gangnam Style",
+    artist: "PSY",
+    spotify: "https://open.spotify.com/intl-fr/track/7LHjM2QyZsloOfRmxKnQ39?si=4a7ca6feda6d40e8",
     tease: "À toi de mettre la puce à l'oreille… Sans donner la réponse trop facilement ! 😎"
   },
   {
     id: 3, day: 1, period: "soir",
-    title: 'Logobitombo',
-    artist: 'Moussier Tombola',
-    spotify: 'https://open.spotify.com/intl-fr/track/5L3i9murWmBM62XVDV9JDk?si=db50252d5621497c',
-    tease: 'Mime, danse, fais du playback muet ou improvise ! 🎭'
+    title: "Logobitombo",
+    artist: "Moussier Tombola",
+    spotify: "https://open.spotify.com/intl-fr/track/5L3i9murWmBM62XVDV9JDk?si=db50252d5621497c",
+    tease: "Mime, danse, fais du playback muet ou improvise ! 🎭"
   },
   {
     id: 4, day: 2, period: "matin",
-    title: 'Libérée, Délivrée',
-    artist: 'Anaïs Delva',
-    spotify: 'https://open.spotify.com/intl-fr/track/5pqhqSdrxLXDZY9eeCAtSJ?si=86ad5945e8c7400d',
-    tease: 'Fais deviner ça sans prononcer le titre, hé ! ❄️😂'
+    title: "Libérée, Délivrée",
+    artist: "Anaïs Delva",
+    spotify: "https://open.spotify.com/intl-fr/track/5pqhqSdrxLXDZY9eeCAtSJ?si=86ad5945e8c7400d",
+    tease: "Fais deviner ça sans prononcer le titre, hé ! ❄️😂"
   },
   {
     id: 5, day: 2, period: "soir",
-    title: 'Ce matin va être une pure soirée',
-    artist: 'Fatal Bazooka feat. Big Ali, PZK & Dogg Soso',
+    title: "Ce matin va être une pure soirée",
+    artist: "Fatal Bazooka feat. Big Ali, PZK & Dogg Soso",
     spotify: "https://open.spotify.com/intl-fr/track/5XENYfZngvQn29g1ZAjeNE?si=3bd1307e73ee4805",
-    tease: 'Transforme ton brossage impec en indices de star ! 🤨'
+    tease: "Transforme ton brossage impec en indices de star ! 🤨"
   },
   {
     id: 6, day: 3, period: "matin",
     title: "Ça m'énerve",
-    artist: 'Helmut Fritz',
-    spotify: 'https://open.spotify.com/intl-fr/track/1P37gwlsx2ghfr8tGzJsRE?si=e566eedf289f4b3a',
-    tease: 'Tu es à mi-parcours. Fais le show et sème de bons indices ! 🔥'
+    artist: "Helmut Fritz",
+    spotify: "https://open.spotify.com/intl-fr/track/1P37gwlsx2ghfr8tGzJsRE?si=e566eedf289f4b3a",
+    tease: "Tu es à mi-parcours. Fais le show et sème de bons indices ! 🔥"
   },
   {
     id: 7, day: 3, period: "soir",
-    title: 'Marly-Gomont',
-    artist: 'Kamini',
-    spotify: 'https://open.spotify.com/intl-fr/track/42SUjSOr2tsUmOIlYBX04Z?si=c6cad8f51f2c4dae',
-    tease: 'Chante, danse, playback… tout est permis pour leur faire deviner ! 😁'
+    title: "Marly-Gomont",
+    artist: "Kamini",
+    spotify: "https://open.spotify.com/intl-fr/track/42SUjSOr2tsUmOIlYBX04Z?si=c6cad8f51f2c4dae",
+    tease: "Chante, danse, playback… tout est permis pour leur faire deviner ! 😁"
   },
   {
     id: 8, day: 4, period: "matin",
     title: "Chef, un p'tit verre on a soif",
-    artist: 'Le Grand Jojo',
-    spotify: 'https://open.spotify.com/intl-fr/track/40adj1F9P9opErWBkLauPJ?si=51d0b98fd289457f',
-    tease: 'Deux minutes, une brosse à dents, un gobelet et ton imagination ! 🇧🇪😂'
+    artist: "Le Grand Jojo",
+    spotify: "https://open.spotify.com/intl-fr/track/40adj1F9P9opErWBkLauPJ?si=51d0b98fd289457f",
+    tease: "Deux minutes, une brosse à dents, un gobelet et ton imagination ! 🇧🇪😂"
   },
   {
     id: 9, day: 4, period: "soir",
-    title: 'Cotton Eye Joe',
-    artist: 'Rednex',
-    spotify: 'https://open.spotify.com/intl-fr/track/06hsdMbBxWGqBO0TV0Zrkf?si=0758ea54904443eb',
+    title: "Cotton Eye Joe",
+    artist: "Rednex",
+    spotify: "https://open.spotify.com/intl-fr/track/06hsdMbBxWGqBO0TV0Zrkf?si=0758ea54904443eb",
     tease: "Dernier soir à l'internat : fais un show digne de ce nom. 🤠"
   },
   {
     id: 10, day: 5, period: "matin",
-    title: 'Never Gonna Give You Up',
-    artist: 'Rick Astley',
-    spotify: 'https://open.spotify.com/intl-fr/track/4PTG3Z6ehGkBFwjybzWkR8?si=13c31fd0438f447c',
-    tease: 'Dernier challenge de la semaine : Do not give up ! 🏁'
+    title: "Never Gonna Give You Up",
+    artist: "Rick Astley",
+    spotify: "https://open.spotify.com/intl-fr/track/4PTG3Z6ehGkBFwjybzWkR8?si=13c31fd0438f447c",
+    tease: "Dernier challenge de la semaine : Do not give up ! 🏁"
   }
 ];
 
-// Le matin va de 04:00 à 13:59.
-// Le soir va de 14:00 à 03:59.
-// Les jours sans challenge restent automatiquement en « RELÂCHE ».
 function currentPeriod(hour) {
   return (hour >= 4 && hour < 14) ? "matin" : "soir";
 }
 
 const days = [
-  "Dimanche","Lundi","Mardi","Mercredi","Jeudi","Vendredi","Samedi"
+  "Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"
 ];
 
 const $ = (selector) => document.querySelector(selector);
@@ -111,7 +107,7 @@ let currentObjectUrl = null;
 
 function getMondayKey(date = new Date()) {
   const d = new Date(date);
-  d.setHours(0,0,0,0);
+  d.setHours(0, 0, 0, 0);
 
   const day = d.getDay();
   const diff = day === 0 ? -6 : 1 - day;
@@ -148,6 +144,7 @@ function updateProgress() {
   $("#progressBar").style.width = `${count * 10}%`;
 
   const c = getCurrentChallenge();
+
   if (c && done[c.id]) {
     $("#validateBtn").textContent = "✅ Challenge du jour validé ✅";
     $("#validateBtn").disabled = true;
@@ -172,13 +169,14 @@ function getCurrentChallenge(date = new Date()) {
 function getNextChallenge() {
   const now = new Date();
 
-  // Recherche toutes les 30 minutes sur les 8 prochains jours.
   for (let i = 1; i <= 8 * 48; i++) {
     const d = new Date(now.getTime() + i * 30 * 60 * 1000);
     const c = getCurrentChallenge(d);
 
-    // Évite d'annoncer comme « prochain » le challenge actuellement ouvert.
-    if (c && (!getCurrentChallenge(now) || c.id !== getCurrentChallenge(now).id)) {
+    if (
+      c &&
+      (!getCurrentChallenge(now) || c.id !== getCurrentChallenge(now).id)
+    ) {
       return { c, d };
     }
   }
@@ -190,8 +188,6 @@ function formatMoment(date, period) {
   return `${days[date.getDay()]} ${period}`;
 }
 
-
-
 // -----------------------------------------------------
 // AFFICHAGE
 // -----------------------------------------------------
@@ -199,13 +195,13 @@ function formatMoment(date, period) {
 function render() {
   const now = new Date();
 
-const dateText = now.toLocaleDateString("fr-BE", {
-  day: "2-digit",
-  month: "long"
-});
+  const dateText = now.toLocaleDateString("fr-BE", {
+    day: "2-digit",
+    month: "long"
+  });
 
-$("#slotLabel").textContent =
-  `${days[now.getDay()]} ${dateText} • ${String(now.getHours()).padStart(2,"0")}:${String(now.getMinutes()).padStart(2,"0")}`;
+  $("#slotLabel").textContent =
+    `${days[now.getDay()]} ${dateText} • ${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
 
   const c = getCurrentChallenge(now);
 
@@ -230,7 +226,7 @@ $("#slotLabel").textContent =
   $("#songTitle").textContent = c.title;
   $("#songArtist").textContent = c.artist;
 
-updateProgress();
+  updateProgress();
 
   $("#validateBtn").onclick = () => {
     const done = getDone();
@@ -298,11 +294,11 @@ function startTimer() {
   timerInterval = setInterval(() => {
     remaining -= 1;
 
-    const minutes = Math.floor(Math.max(remaining,0) / 60);
-    const seconds = Math.max(remaining,0) % 60;
+    const minutes = Math.floor(Math.max(remaining, 0) / 60);
+    const seconds = Math.max(remaining, 0) % 60;
 
     $("#timer").textContent =
-      `${String(minutes).padStart(2,"0")}:${String(seconds).padStart(2,"0")}`;
+      `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 
     if (remaining <= 0) {
       $("#timer").classList.add("done");
@@ -326,6 +322,7 @@ function pickMimeType() {
     "video/webm;codecs=vp9,opus",
     "video/webm"
   ];
+
   return candidates.find(type => MediaRecorder.isTypeSupported(type)) || "";
 }
 
@@ -345,7 +342,7 @@ function showRecordedFile(file) {
       "Envoie la vidéo pour faire deviner le morceau !";
   } else {
     $("#shareHint").textContent =
-      "Si le partage direct n'est pas disponible, enregistre la vidéo et partage-la via la galerie";
+      "Si le partage direct n'est pas disponible, enregistre la vidéo et partage-la via la galerie.";
   }
 }
 
@@ -369,17 +366,22 @@ function startRecording() {
   }
 
   recorder.ondataavailable = event => {
-    if (event.data && event.data.size > 0) chunks.push(event.data);
+    if (event.data && event.data.size > 0) {
+      chunks.push(event.data);
+    }
   };
 
   recorder.onstop = () => {
     const type =
       recorder.mimeType ||
-      (mimeType || "video/webm");
+      mimeType ||
+      "video/webm";
 
     const blob = new Blob(chunks, { type });
 
-    const extension = type.includes("mp4") ? "mp4" : "webm";
+    const extension = type.includes("mp4")
+      ? "mp4"
+      : "webm";
 
     const file = new File(
       [blob],
@@ -414,18 +416,11 @@ async function shareVideo() {
   if (!recordedFile) return;
 
   try {
-
-    // 1. Cas idéal :
-    // Android ouvre directement son menu de partage
-    // avec la vidéo déjà jointe.
     if (
       navigator.share &&
       navigator.canShare &&
-      navigator.canShare({
-        files: [recordedFile]
-      })
+      navigator.canShare({ files: [recordedFile] })
     ) {
-
       await navigator.share({
         title: "Logan's Brush Challenge",
         text: "Devine le morceau 😎🦷🎵",
@@ -434,11 +429,7 @@ async function shareVideo() {
 
       return;
     }
-
   } catch (error) {
-
-    // Si Logan ferme simplement le menu de partage,
-    // on ne fait rien.
     if (error?.name === "AbortError") {
       return;
     }
@@ -446,73 +437,42 @@ async function shareVideo() {
     console.error("Erreur de partage :", error);
   }
 
-  /*
-    2. Si Android refuse le partage direct du fichier,
-       on sauvegarde d'abord la vidéo.
-  */
-
+  // Secours : enregistrer la vidéo localement.
   const videoUrl = URL.createObjectURL(recordedFile);
 
   const downloadLink = document.createElement("a");
-
   downloadLink.href = videoUrl;
   downloadLink.download = recordedFile.name;
 
   document.body.appendChild(downloadLink);
-
   downloadLink.click();
-
   downloadLink.remove();
 
   setTimeout(() => {
     URL.revokeObjectURL(videoUrl);
   }, 1500);
 
-  /*
-    3. Puis on ouvre directement WhatsApp.
-       La vidéo n'est malheureusement pas jointe automatiquement
-       dans ce mode de secours.
-  */
-
-  const message =
-    "Devine le morceau 😎🦷🎵";
+  // Puis ouvrir WhatsApp.
+  const message = "Devine le morceau 😎🦷🎵";
 
   setTimeout(() => {
-
     window.location.href =
       "https://wa.me/?text=" +
       encodeURIComponent(message);
-
   }, 800);
 }
 
-  // Secours : téléchargement local de la vidéo.
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(recordedFile);
-  a.download = recordedFile.name;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-
-  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-
-  alert(
-    "Tu peux maintenant partager la vidéo ou ouvrant Whatsapp."
-  );
-}
-
 // -----------------------------------------------------
-// ÉVÉNEMENTS
+// EVENEMENTS
 // -----------------------------------------------------
-
 
 $("#spotifyBtn").addEventListener("click", () => {
   const challenge = getCurrentChallenge();
-  if (!challenge || !challenge.spotify) return;
 
-  // Spotify s'ouvre sur le morceau du challenge.
-  // Logan lance le morceau puis revient sur le Brush Challenge
-  // pour filmer son show pendant que Spotify continue en arrière-plan.
+  if (!challenge || !challenge.spotify) {
+    return;
+  }
+
   window.location.href = challenge.spotify;
 });
 
@@ -528,7 +488,10 @@ $("#redoBtn").addEventListener("click", () => {
 
 $("#fallbackVideo").addEventListener("change", event => {
   const file = event.target.files?.[0];
-  if (file) showRecordedFile(file);
+
+  if (file) {
+    showRecordedFile(file);
+  }
 });
 
 $("#resetBtn").addEventListener("click", () => {
@@ -542,6 +505,5 @@ window.addEventListener("pagehide", () => {
   cleanupObjectUrl();
 });
 
-// L'heure affichée se met à jour sans recharger la page.
 render();
 setInterval(render, 60 * 1000);

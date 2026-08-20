@@ -158,7 +158,7 @@ function updateProgress() {
 }
 
 // -----------------------------------------------------
-// CRÉNEAUX
+// CRENEAUX
 // -----------------------------------------------------
 
 function getCurrentChallenge(date = new Date()) {
@@ -229,7 +229,7 @@ $("#slotLabel").textContent =
   $("#tease").textContent = c.tease;
   $("#songTitle").textContent = c.title;
   $("#songArtist").textContent = c.artist;
-  $("#spotifyBtn").textContent = "​⏯️​ Lance le morceau";
+  $("#spotifyBtn").textContent = "​📻​​ Lance le morceau";
 
 updateProgress();
 
@@ -242,7 +242,7 @@ updateProgress();
 }
 
 // -----------------------------------------------------
-// CAMÉRA / VIDÉO
+// VIDEO
 // -----------------------------------------------------
 
 function supportsWebRecording() {

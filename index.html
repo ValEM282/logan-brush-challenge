@@ -61,14 +61,14 @@
           <p class="hint">
             Ton navigateur ne peut pas filmer directement ici. Utilise la caméra de ton téléphone :
           </p>
-          <label class="btn" for="fallbackVideo">🎦 Filmer avec mon téléphone</label>
+          <label class="btn" for="fallbackVideo">Filmer avec ton téléphone</label>
           <input id="fallbackVideo" class="file-input" type="file" accept="video/*" capture="user">
         </div>
 
         <div id="resultPanel" class="result hidden">
           <video id="resultVideo" controls playsinline></video>
-          <button id="shareBtn" class="btn primary">➡️ Envoyer la vidéo</button>
-          <button id="redoBtn" class="btn subtle">🔄 Refaire la vidéo</button>
+          <button id="shareBtn" class="btn primary">Envoyer la vidéo</button>
+          <button id="redoBtn" class="btn primary">Refaire la vidéo</button>
           <p id="shareHint" class="hint"></p>
         </div>
 
@@ -78,7 +78,9 @@
             <strong id="progressText">0/10</strong>
           </div>
           <div class="progress"><div id="progressBar"></div></div>
-          <button id="validateBtn" class="btn subtle">🔥 Challenge du jour fait 🔥</button>
+          <button id="validateBtn" class="btn primary">
+            🔥 Challenge du jour fait 🔥
+          </button>
         </div>
       </section>
 
@@ -90,9 +92,9 @@
       <details class="settings">
         <summary>⚙️ Réglages</summary>
         <p>
-          Pour changer de playlist, il faut le demander gentiment à Val (ou Pierrick s'il a appris comment faire entre-temps).
+          Pour changer de playlist, il faut le demander gentiment à Val (et si tu veux je te montre comment faire... IT POWAAAAAA).
         </p>
-        <button id="resetBtn" class="btn subtle">Réinitialiser la progression</button>
+        <button id="resetBtn" class="btn primary">Mettre le compteur à zéro</button>
       </details>
     </section>
   </main>

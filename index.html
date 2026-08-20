@@ -31,16 +31,18 @@
       <section id="challengeBox" class="challenge hidden">
         <div class="challenge-number" id="challengeNumber"></div>
         <p class="tease" id="tease"></p>
-        <div class="song">
-          <div class="song-title" id="songTitle"></div>
-          <div class="song-artist" id="songArtist"></div>
-        </div>
+<button id="spotifyBtn" class="song song-button" type="button">
+  <div class="song-info">
+    <div class="song-title" id="songTitle"></div>
+    <div class="song-artist" id="songArtist"></div>
+  </div>
 
-        <button id="spotifyBtn" class="btn primary" type="button">
-          ​📻​​ Lance le morceau
-        </button>
+  <div class="song-play">
+    ▶ PLAY
+  </div>
+</button>
 
-        <button id="cameraBtn" class="btn">📽️​ Filme ton show !</button>
+        <button id="cameraBtn" class="btn primary">🎦 Filme ton show !</button>
 
         <div id="cameraPanel" class="camera-panel hidden">
           <video id="preview" autoplay muted playsinline></video>

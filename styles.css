@@ -413,3 +413,20 @@ body{
   font-weight:900;
   letter-spacing:.08em;
 }
+
+/* ===== MESSAGE CHALLENGE VALIDÉ ===== */
+
+.done-box{
+  margin-top:14px;
+  text-align:center;
+}
+
+.done-box > strong{
+  color:#7dd3fc !important;
+}
+
+.done-box p{
+  margin-top:4px;
+  color:#f8fafc;
+  font-weight:700;
+}

@@ -226,6 +226,58 @@ function render() {
   $("#songTitle").textContent = c.title;
   $("#songArtist").textContent = c.artist;
 
+  const done = getDone();
+const challengeDone = !!done[c.id];
+
+const elementsToHide = [
+  $("#challengeNumber"),
+  $("#tease"),
+  $("#spotifyBtn"),
+  $("#cameraBtn"),
+  $("#cameraPanel"),
+  $("#fallbackPanel"),
+  $("#resultPanel")
+];
+
+if (challengeDone) {
+
+  elementsToHide.forEach(element => {
+    if (element) {
+      element.classList.add("hidden");
+    }
+  });
+
+  $("#doneBox").classList.remove("hidden");
+
+  // Cas particulier : vendredi matin,
+  // le prochain challenge n'est que dimanche soir.
+  if (c.day === 5 && c.period === "matin") {
+
+    $("#doneMessage").textContent =
+      "À dimanche soir pour le prochain challenge ! 😎";
+
+  } else if (c.period === "matin") {
+
+    $("#doneMessage").textContent =
+      "À ce soir pour le prochain challenge ! 😎";
+
+  } else {
+
+    $("#doneMessage").textContent =
+      "À demain pour le prochain challenge ! 😎";
+  }
+
+} else {
+
+  elementsToHide.forEach(element => {
+    if (element) {
+      element.classList.remove("hidden");
+    }
+  });
+
+  $("#doneBox").classList.add("hidden");
+}
+
   updateProgress();
 
   $("#validateBtn").onclick = () => {

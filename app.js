@@ -201,11 +201,15 @@ function render() {
   });
 
   $("#slotLabel").textContent =
-    `${days[now.getDay()]} ${dateText} • ${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+    `${days[now.getDay()]} ${dateText} • ` +
+    `${String(now.getHours()).padStart(2, "0")}:` +
+    `${String(now.getMinutes()).padStart(2, "0")}`;
 
   const c = getCurrentChallenge(now);
 
+  // Pas de challenge à ce moment-là
   if (!c) {
+
     $("#challengeBox").classList.add("hidden");
     $("#offBox").classList.remove("hidden");
 
@@ -221,79 +225,87 @@ function render() {
   $("#offBox").classList.add("hidden");
   $("#challengeBox").classList.remove("hidden");
 
+  // Informations du challenge
   $("#challengeNumber").textContent = `Challenge #${c.id}`;
   $("#tease").textContent = c.tease;
   $("#songTitle").textContent = c.title;
   $("#songArtist").textContent = c.artist;
 
   const done = getDone();
-const challengeDone = !!done[c.id];
+  const challengeDone = !!done[c.id];
 
-const elementsToHide = [
-  $("#challengeNumber"),
-  $("#tease"),
-  $("#spotifyBtn"),
-  $("#cameraBtn"),
-  $("#cameraPanel"),
-  $("#fallbackPanel"),
-  $("#resultPanel")
-];
+  const challengeContent = $("#challengeContent");
+  const doneBox = $("#doneBox");
+  const doneMessage = $("#doneMessage");
 
-if (challengeDone) {
+  if (challengeDone) {
 
-  elementsToHide.forEach(element => {
-    if (element) {
-      element.classList.add("hidden");
+    // Le challenge et la vidéo disparaissent
+    if (challengeContent) {
+      challengeContent.classList.add("hidden");
     }
-  });
 
-  $("#doneBox").classList.remove("hidden");
+    // Message de validation
+    if (doneBox) {
+      doneBox.classList.remove("hidden");
+    }
 
-  // Cas particulier : vendredi matin,
-  // le prochain challenge n'est que dimanche soir.
-  if (c.day === 5 && c.period === "matin") {
+    if (doneMessage) {
 
-    $("#doneMessage").textContent =
-      "À dimanche soir pour le prochain challenge ! 😎";
+      // Vendredi matin -> prochain challenge dimanche soir
+      if (c.day === 5 && c.period === "matin") {
 
-  } else if (c.period === "matin") {
+        doneMessage.textContent =
+          "À dimanche soir pour le prochain challenge ! 😎";
 
-    $("#doneMessage").textContent =
-      "À ce soir pour le prochain challenge ! 😎";
+      }
+
+      // Challenge du matin -> prochain challenge le soir
+      else if (c.period === "matin") {
+
+        doneMessage.textContent =
+          "À ce soir pour le prochain challenge ! 😎";
+
+      }
+
+      // Challenge du soir -> prochain challenge le lendemain
+      else {
+
+        doneMessage.textContent =
+          "À demain pour le prochain challenge ! 😎";
+
+      }
+    }
 
   } else {
 
-    $("#doneMessage").textContent =
-      "À demain pour le prochain challenge ! 😎";
-  }
-
-} else {
-
-  elementsToHide.forEach(element => {
-    if (element) {
-      element.classList.remove("hidden");
+    if (challengeContent) {
+      challengeContent.classList.remove("hidden");
     }
-  });
 
-  $("#doneBox").classList.add("hidden");
-}
+    if (doneBox) {
+      doneBox.classList.add("hidden");
+    }
+  }
 
   updateProgress();
 
   $("#validateBtn").onclick = () => {
+
     const done = getDone();
-  
+
     done[c.id] = true;
     saveDone(done);
-  
-    // Nettoyage de la vidéo en cours
+
+    // Nettoyage de la vidéo
     recordedFile = null;
     cleanupObjectUrl();
     stopTracks();
-  
-    // Recharge complètement la page
+
+    // Recharge la page dans son état "challenge validé"
     window.location.reload();
   };
+}
 
 // -----------------------------------------------------
 // VIDEO
@@ -521,6 +533,30 @@ async function shareVideo() {
   }, 800);
 }
 
+function renderChallengeList() {
+  const list = $("#challengeList");
+
+  if (!list) return;
+
+  list.innerHTML = challenges
+    .map(challenge => `
+      <div class="challenge-list-item">
+
+        <span class="challenge-list-number">
+          #${challenge.id}
+        </span>
+
+        <div>
+          <strong>${challenge.title}</strong>
+          <small>${challenge.artist}</small>
+        </div>
+
+      </div>
+    `)
+    .join("");
+}
+
+
 // -----------------------------------------------------
 // EVENEMENTS
 // -----------------------------------------------------
@@ -564,5 +600,7 @@ window.addEventListener("pagehide", () => {
   cleanupObjectUrl();
 });
 
+renderChallengeList();
 render();
+
 setInterval(render, 60 * 1000);

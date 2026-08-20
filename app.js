@@ -229,7 +229,6 @@ $("#slotLabel").textContent =
   $("#tease").textContent = c.tease;
   $("#songTitle").textContent = c.title;
   $("#songArtist").textContent = c.artist;
-  $("#spotifyBtn").textContent = "​📻​​ Lance le morceau";
 
 updateProgress();
 

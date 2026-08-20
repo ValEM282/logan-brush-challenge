@@ -230,11 +230,18 @@ function render() {
 
   $("#validateBtn").onclick = () => {
     const done = getDone();
+  
     done[c.id] = true;
     saveDone(done);
-    updateProgress();
+  
+    // Nettoyage de la vidéo en cours
+    recordedFile = null;
+    cleanupObjectUrl();
+    stopTracks();
+  
+    // Recharge complètement la page
+    window.location.reload();
   };
-}
 
 // -----------------------------------------------------
 // VIDEO

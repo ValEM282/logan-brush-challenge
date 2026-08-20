@@ -370,3 +370,46 @@ body{
   font-size:1.05rem;
   font-weight:900;
 }
+
+/* ===== BOUTON CHANSON / SPOTIFY ===== */
+
+.song-button{
+  width:100%;
+  border:1px solid rgba(125,211,252,.28);
+  background:#223b63;
+  border-radius:18px;
+  padding:12px 18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+
+  color:#f8fafc;
+  text-align:left;
+  cursor:pointer;
+}
+
+.song-button:active{
+  transform:scale(.99);
+}
+
+.song-info{
+  min-width:0;
+}
+
+.song-title{
+  color:#f8fafc;
+}
+
+.song-artist{
+  color:#b7c5dc;
+}
+
+.song-play{
+  flex-shrink:0;
+  color:#7dd3fc;
+  font-size:.9rem;
+  font-weight:900;
+  letter-spacing:.08em;
+}

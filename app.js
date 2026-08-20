@@ -538,21 +538,55 @@ function renderChallengeList() {
 
   if (!list) return;
 
-  list.innerHTML = challenges
-    .map(challenge => `
-      <div class="challenge-list-item">
+  const done = getDone();
 
-        <span class="challenge-list-number">
-          #${challenge.id}
-        </span>
+  const completedChallenges = challenges.filter(
+    challenge => done[challenge.id]
+  );
 
-        <div>
-          <strong>${challenge.title}</strong>
-          <small>${challenge.artist}</small>
+  if (completedChallenges.length === 0) {
+    list.innerHTML = `
+      <p class="hint">
+        Aucun challenge validé pour le moment
+      </p>
+    `;
+    return;
+  }
+
+  list.innerHTML = completedChallenges
+    .map(challenge => {
+
+      const moment =
+        challenge.period === "matin"
+          ? `${days[challenge.day]} matin`
+          : `${days[challenge.day]} soir`;
+
+      return `
+        <div class="challenge-list-item">
+
+          <span class="challenge-list-number">
+            #${challenge.id}
+          </span>
+
+          <div class="challenge-list-text">
+
+            <div class="challenge-list-date">
+              ${moment}
+            </div>
+
+            <div class="challenge-list-title">
+              ${challenge.title}
+            </div>
+
+            <div class="challenge-list-artist">
+              ${challenge.artist}
+            </div>
+
+          </div>
+
         </div>
-
-      </div>
-    `)
+      `;
+    })
     .join("");
 }
 

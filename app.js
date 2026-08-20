@@ -256,7 +256,7 @@ function render() {
       if (c.day === 5 && c.period === "matin") {
 
         doneMessage.textContent =
-          "À dimanche soir pour le prochain challenge ! 😎";
+          "À dimanche soir pour le prochain challenge !";
 
       }
 
@@ -264,7 +264,7 @@ function render() {
       else if (c.period === "matin") {
 
         doneMessage.textContent =
-          "À ce soir pour le prochain challenge ! 😎";
+          "À ce soir pour le prochain challenge !";
 
       }
 
@@ -272,7 +272,7 @@ function render() {
       else {
 
         doneMessage.textContent =
-          "À demain pour le prochain challenge ! 😎";
+          "À demain pour le prochain challenge !";
 
       }
     }

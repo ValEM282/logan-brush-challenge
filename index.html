@@ -28,72 +28,122 @@
         </p>
       </div>
 
-      <section id="challengeBox" class="challenge hidden">
-        <div class="challenge-number" id="challengeNumber"></div>
-        <p class="tease" id="tease"></p>
-<button id="spotifyBtn" class="song song-button" type="button">
-  <div class="song-info">
-    <div class="song-title" id="songTitle"></div>
-    <div class="song-artist" id="songArtist"></div>
+<section id="challengeBox" class="challenge hidden">
+
+  <!-- Tout ce qui disparaît une fois le challenge validé -->
+  <div id="challengeContent" class="challenge-content">
+
+    <div class="challenge-number" id="challengeNumber"></div>
+    <p class="tease" id="tease"></p>
+
+    <button id="spotifyBtn" class="song song-button" type="button">
+      <div class="song-info">
+        <div class="song-title" id="songTitle"></div>
+        <div class="song-artist" id="songArtist"></div>
+      </div>
+
+      <div class="song-play">
+        ▶ PLAY
+      </div>
+    </button>
+
+    <button id="cameraBtn" class="btn primary">Filme ton show !</button>
+
+    <div id="cameraPanel" class="camera-panel hidden">
+      <video id="preview" autoplay muted playsinline></video>
+
+      <div class="timer" id="timer">02:00</div>
+
+      <div class="camera-actions">
+        <button id="startBtn" class="btn success">
+          Démarrer
+        </button>
+
+        <button id="stopBtn" class="btn danger" disabled>
+          Terminer
+        </button>
+      </div>
+
+      <p class="hint">
+        La vidéo reste sur ton téléphone tant que tu ne la partages pas.
+      </p>
+    </div>
+
+    <div id="fallbackPanel" class="fallback-panel hidden">
+
+      <p class="hint">
+        Ton navigateur ne peut pas filmer directement ici.
+        Utilise la caméra du téléphone :
+      </p>
+
+      <label class="btn" for="fallbackVideo">
+        Filmer avec ton téléphone
+      </label>
+
+      <input
+        id="fallbackVideo"
+        class="file-input"
+        type="file"
+        accept="video/*"
+        capture="user"
+      >
+
+    </div>
+
+    <div id="resultPanel" class="result hidden">
+
+      <video id="resultVideo" controls playsinline></video>
+
+      <button id="shareBtn" class="btn primary">
+        Envoyer la vidéo
+      </button>
+
+      <button id="redoBtn" class="btn subtle">
+        Refaire la vidéo
+      </button>
+
+      <p id="shareHint" class="hint"></p>
+
+    </div>
+
   </div>
 
-  <div class="song-play">
-    ▶ PLAY
+  <!-- Ceci remplace le challenge une fois validé -->
+  <div id="doneBox" class="rules done-box hidden">
+    <strong>✅ CHALLENGE VALIDÉ ✅</strong>
+    <p id="doneMessage"></p>
   </div>
-</button>
 
-        <button id="cameraBtn" class="btn primary">Filme ton show !</button>
+  <!-- La progression reste toujours visible -->
+  <div class="progress-wrap">
 
-        <div id="cameraPanel" class="camera-panel hidden">
-          <video id="preview" autoplay muted playsinline></video>
-          <div class="timer" id="timer">02:00</div>
+    <div class="progress-label">
+      <span>Progression de la semaine</span>
+      <strong id="progressText">0/10</strong>
+    </div>
 
-          <div class="camera-actions">
-            <button id="startBtn" class="btn success">Démarrer</button>
-            <button id="stopBtn" class="btn danger" disabled>Terminer</button>
-          </div>
-          <p class="hint">
-            La vidéo reste sur ton téléphone tant que tu ne la partages pas.
-          </p>
-        </div>
+    <div class="progress">
+      <div id="progressBar"></div>
+    </div>
 
-        <div id="fallbackPanel" class="fallback-panel hidden">
-          <p class="hint">
-            Ton navigateur ne peut pas filmer directement ici. Utilise la caméra de ton téléphone :
-          </p>
-          <label class="btn" for="fallbackVideo">Filmer avec ton téléphone</label>
-          <input id="fallbackVideo" class="file-input" type="file" accept="video/*" capture="user">
-        </div>
+    <button id="validateBtn" class="btn primary">
+      🔥 Challenge du jour fait 🔥
+    </button>
 
-        <div id="resultPanel" class="result hidden">
-          <video id="resultVideo" controls playsinline></video>
-          <button id="shareBtn" class="btn primary">Envoyer la vidéo</button>
-          <button id="redoBtn" class="btn primary">Refaire la vidéo</button>
-          <p id="shareHint" class="hint"></p>
-        </div>
+  </div>
 
-        <div id="doneBox" class="rules done-box hidden">
-          <strong>✅ CHALLENGE VALIDÉ ✅</strong>
-          <p id="doneMessage"></p>
-        </div>
-
-        <div class="progress-wrap">
-          <div class="progress-label">
-            <span>Progression de la semaine</span>
-            <strong id="progressText">0/10</strong>
-          </div>
-          <div class="progress"><div id="progressBar"></div></div>
-          <button id="validateBtn" class="btn primary">
-            🔥 Challenge fait 🔥
-          </button>
-        </div>
-      </section>
+</section>
 
       <section id="offBox" class="off hidden">
         <div class="big">😎 RELÂCHE 😎</div>
         <p id="nextChallenge"></p>
       </section>
 
+      <details class="settings">
+        <summary>Challenges</summary>
+        <div id="challengeList" class="challenge-list"></div>
+      </details>
+      
       <details class="settings">
         <summary>Paramètres</summary>
         <p>

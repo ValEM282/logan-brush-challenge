@@ -320,12 +320,12 @@ function stopTracks() {
 
 function pickMimeType() {
   const candidates = [
-    "video/webm;codecs=vp9,opus",
+    "video/mp4;codecs=h264,aac",
+    "video/mp4",
     "video/webm;codecs=vp8,opus",
-    "video/webm",
-    "video/mp4"
+    "video/webm;codecs=vp9,opus",
+    "video/webm"
   ];
-
   return candidates.find(type => MediaRecorder.isTypeSupported(type)) || "";
 }
 
@@ -345,7 +345,7 @@ function showRecordedFile(file) {
       "Envoie la vidéo pour faire deviner le morceau !";
   } else {
     $("#shareHint").textContent =
-      "Si le partage direct n'est pas disponible, enregistre la vidéo puis partage-la via la galerie";
+      "Si le partage direct n'est pas disponible, enregistre la vidéo et partage-la via la galerie";
   }
 }
 
@@ -413,23 +413,78 @@ function stopRecording() {
 async function shareVideo() {
   if (!recordedFile) return;
 
-  if (
-    navigator.canShare &&
-    navigator.canShare({ files: [recordedFile] })
-  ) {
-    try {
+  try {
+
+    // 1. Cas idéal :
+    // Android ouvre directement son menu de partage
+    // avec la vidéo déjà jointe.
+    if (
+      navigator.share &&
+      navigator.canShare &&
+      navigator.canShare({
+        files: [recordedFile]
+      })
+    ) {
+
       await navigator.share({
-        title: "Logan Brush Challenge",
-        text: "À toi de deviner le morceau 😎🦷🎵",
+        title: "Logan's Brush Challenge",
+        text: "Devine le morceau 😎🦷🎵",
         files: [recordedFile]
       });
+
       return;
-    } catch (error) {
-      // L'utilisateur peut simplement fermer la feuille de partage.
-      if (error?.name === "AbortError") return;
-      console.error(error);
     }
+
+  } catch (error) {
+
+    // Si Logan ferme simplement le menu de partage,
+    // on ne fait rien.
+    if (error?.name === "AbortError") {
+      return;
+    }
+
+    console.error("Erreur de partage :", error);
   }
+
+  /*
+    2. Si Android refuse le partage direct du fichier,
+       on sauvegarde d'abord la vidéo.
+  */
+
+  const videoUrl = URL.createObjectURL(recordedFile);
+
+  const downloadLink = document.createElement("a");
+
+  downloadLink.href = videoUrl;
+  downloadLink.download = recordedFile.name;
+
+  document.body.appendChild(downloadLink);
+
+  downloadLink.click();
+
+  downloadLink.remove();
+
+  setTimeout(() => {
+    URL.revokeObjectURL(videoUrl);
+  }, 1500);
+
+  /*
+    3. Puis on ouvre directement WhatsApp.
+       La vidéo n'est malheureusement pas jointe automatiquement
+       dans ce mode de secours.
+  */
+
+  const message =
+    "Devine le morceau 😎🦷🎵";
+
+  setTimeout(() => {
+
+    window.location.href =
+      "https://wa.me/?text=" +
+      encodeURIComponent(message);
+
+  }, 800);
+}
 
   // Secours : téléchargement local de la vidéo.
   const a = document.createElement("a");
@@ -442,7 +497,7 @@ async function shareVideo() {
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 
   alert(
-    "La vidéo a été enregistrée sur ton téléphone. Tu peux maintenant la partager depuis la galerie ou les téléchargements."
+    "Tu peux maintenant partager la vidéo ou ouvrant Whatsapp."
   );
 }
 

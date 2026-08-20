@@ -430,3 +430,70 @@ body{
   color:#f8fafc;
   font-weight:700;
 }
+
+/* ===== CONTENU DU CHALLENGE ===== */
+
+.challenge-content{
+  display:grid;
+  gap:14px;
+}
+
+
+/* ===== CHALLENGE VALIDÉ ===== */
+
+.done-box{
+  margin-top:14px;
+  text-align:center;
+}
+
+.done-box > strong{
+  color:#7dd3fc !important;
+  font-size:1rem;
+}
+
+.done-box p{
+  margin:4px 0 0;
+  color:#f8fafc;
+  font-weight:700;
+}
+
+/* ===== LISTE DES CHALLENGES ===== */
+
+.challenge-list{
+  display:grid;
+  gap:8px;
+  margin-top:12px;
+}
+
+.challenge-list-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  padding:10px 12px;
+
+  background:#223556;
+  border:1px solid rgba(125,211,252,.16);
+  border-radius:12px;
+}
+
+.challenge-list-number{
+  min-width:32px;
+
+  color:#7dd3fc;
+
+  font-weight:900;
+  font-size:.9rem;
+}
+
+.challenge-list-item strong{
+  display:block;
+  color:#f8fafc;
+}
+
+.challenge-list-item small{
+  display:block;
+  margin-top:2px;
+
+  color:#a7b0c0;
+}

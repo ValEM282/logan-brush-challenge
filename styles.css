@@ -497,3 +497,24 @@ body{
 
   color:#a7b0c0;
 }
+
+.challenge-list-text{
+  display:grid;
+  gap:2px;
+}
+
+.challenge-list-date{
+  color:#7dd3fc;
+  font-size:.8rem;
+  font-weight:700;
+}
+
+.challenge-list-title{
+  color:#f8fafc;
+  font-weight:900;
+}
+
+.challenge-list-artist{
+  color:#a7b0c0;
+  font-size:.85rem;
+}

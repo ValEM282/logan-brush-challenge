@@ -219,6 +219,7 @@ video{
 .big{
   font-size:1.9rem;
   font-weight:950;
+  text-align:center;
 }
 
 .off p{

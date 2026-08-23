@@ -42,7 +42,7 @@ const challenges = [
   {
     id: 5, day: 2, period: "soir",
     title: "Ce matin va être une pure soirée",
-    artist: "Fatal Bazooka feat. Big Ali, PZK & Dogg Soso",
+    artist: "Fatal Bazooka ft. Big Ali",
     spotify: "https://open.spotify.com/intl-fr/track/5XENYfZngvQn29g1ZAjeNE?si=3bd1307e73ee4805",
     tease: "Transforme ton brossage impec en indices de star ! 🤨"
   },
@@ -79,7 +79,7 @@ const challenges = [
     title: "Never Gonna Give You Up",
     artist: "Rick Astley",
     spotify: "https://open.spotify.com/intl-fr/track/4PTG3Z6ehGkBFwjybzWkR8?si=13c31fd0438f447c",
-    tease: "Dernier challenge de la semaine : Do not give up ! 🏁"
+    tease: "Dernier challenge de la semaine : Don't give up ! 🏁"
   }
 ];
 

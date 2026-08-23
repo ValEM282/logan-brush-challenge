@@ -146,10 +146,10 @@ function updateProgress() {
   const c = getCurrentChallenge();
 
   if (c && done[c.id]) {
-    $("#validateBtn").textContent = "✅ Challenge du jour validé ✅";
+    $("#validateBtn").textContent = "✅ CHALLENGE VALIDÉ ✅";
     $("#validateBtn").disabled = true;
   } else {
-    $("#validateBtn").textContent = "🔥 Challenge du jour fait 🔥";
+    $("#validateBtn").textContent = "🔥 Valide le challenge du jour 🔥";
     $("#validateBtn").disabled = false;
   }
 }
@@ -216,8 +216,8 @@ function render() {
     const next = getNextChallenge();
 
     $("#nextChallenge").textContent = next
-      ? `Prochain challenge : ${formatMoment(next.d, next.c.period)}.`
-      : "À bientôt.";
+      ? `Prochain challenge : ${formatMoment(next.d, next.c.period)}`
+      : "À bientôt";
 
     return;
   }
@@ -413,7 +413,7 @@ function showRecordedFile(file) {
       "Envoie la vidéo pour faire deviner le morceau !";
   } else {
     $("#shareHint").textContent =
-      "Si le partage direct n'est pas disponible, enregistre la vidéo et partage-la via la galerie.";
+      "Si le partage direct n'est pas disponible, enregistre la vidéo et partage-la via la galerie";
   }
 }
 

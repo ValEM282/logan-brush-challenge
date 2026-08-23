@@ -217,6 +217,7 @@ video{
 }
 
 .big{
+  margin-top:15px;
   font-size:1.9rem;
   font-weight:950;
   text-align:center;
@@ -228,8 +229,8 @@ video{
   line-height:1.5;
 }
 .settings{
-  margin-top:20px;
-  padding-top:4px;
+  margin-top:10px;
+  padding-top:2px;
   color:var(--muted);
   font-size:.88rem;
 }
